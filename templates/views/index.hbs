@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{>meta}}
+    {{>stylesheets}}
+    <title>{{title}}</title>
+</head>
+
+<body>
+    <div class="main-content">
+
+        {{>header}}
+
+        <p>Use this site to get your weather!</p>
+
+        <form>
+            <input placeholder="Location es. Boston">
+            <button>Search </button>
+        </form>
+        <p id="success"></p>
+        <p id="error"></p>
+    </div>
+
+    {{>footer}}
+
+    {{>javascripts}}
+</body>
+
+</html>

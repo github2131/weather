@@ -1,0 +1,101 @@
+body{
+        color:#333333;
+        font-family: arial;
+        max-width: 650px;
+        margin: 0 auto;
+        padding: 0 16px;
+
+        
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+}
+
+.main-content{
+        flex-grow: 1;
+}
+
+footer {
+        color: #888888;
+        border-top: 1px solid #eeeeee;
+        margin-top: 16px;
+        padding: 16px;
+
+}
+
+header{
+        margin-top: 16px;
+        margin-bottom: 48px;
+}
+
+header a{
+        color: #888888;
+        margin-right: 16px;
+        text-decoration: none;
+}
+
+.portrait{
+        width: 250px;
+        border-right: 1px solid #eeeeee;
+        border-bottom: 1px solid #eeeeee;
+}
+
+.header-title{
+        font-size: 64px;
+        margin-bottom: 16px;
+}
+.header-title::before{
+        content:url("../img/weather.png");
+}
+#success{
+        color:green;
+}
+#error{
+        color: red;
+}
+input{
+        border: 1px solid#cccccc;
+        padding: 8px;
+}
+button{
+        cursor:pointer;
+        border: 1px solid #888888;
+        background:  #888888;
+        color :white;
+        padding: 8px;
+
+}
+
+/*
+body{
+        color:#333333;
+        font-family:  arial;
+        min-height: 100%!important;
+}
+.header {
+        color: grey  
+}
+img.profile{
+        max-width: 120px;
+}
+#footer{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+}
+#top-menu{
+        padding: 5px;
+        margin: 5px;
+}
+#top-menu a{
+        text-transform: capitalize;
+}
+
+.author{
+        padding: 5px;
+        margin: 10px;;
+        color: grey;
+        text-align: center;
+}*/
+

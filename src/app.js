@@ -8,6 +8,7 @@ const forecast = require('./utils/forecast')
 
 // NEW WEB SERVER EXPRESS APP
 const app = express()
+const port = process.env.PORT || 3000
 
 // PATHS VARIABLES FOR EXPRESS CONFIG
 
@@ -43,14 +44,14 @@ app.use(express.static(publicDirectoryPath))
 app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather',
-        author: 'Andrew Mead'
+        author: 'Commongroup'
     })// Il template può anche essere specificato senza estensione
 })
 //about
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About Me',
-        author: 'Andrew Mead'
+        author: 'Commongroup'
     })
 })
 
@@ -58,7 +59,7 @@ app.get('/about', (req, res) => {
 app.get('/help', (req, res) => {
     res.render('help.hbs', {
         title: 'Help',
-        author: 'Andrew Mead',
+        author: 'Commongroup',
         message: 'I need help, to complete this course...it\'s too long',
     })
 })
@@ -119,7 +120,7 @@ app.get('/products', (req, res) => {
 app.get('/help/*', (req, res) => {
     res.render('404.hbs', {
         title: 'Error 404',
-        author: 'Andrew Mead',
+        author: 'Commongroup',
         message: 'Help article not found!',
     })
 })
@@ -128,13 +129,13 @@ app.get('/help/*', (req, res) => {
 app.get('*', (req, res) => {
     res.render('404.hbs', {
         title: 'Error 404',
-        author: 'Andrew Mead',
+        author: 'Commongroup',
         message: 'Page not found!',
     })
 })
 
 
 // SERVER UP
-app.listen(3000, () => {
-    console.log('Server Express is up on port 3000!')
+app.listen( port , () => {
+    console.log('Server Express is up on port ' + port + '!')
 })

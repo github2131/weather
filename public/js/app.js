@@ -12,12 +12,12 @@ weatherForm.addEventListener('submit', (e) => {
 
 
     const location = search.value
-    const weatherApiUrl = 'http://192.168.1.64:3000/weather?address=' + location;
+    const weatherApiUrl = '/weather?address=' + location;
 
     paragraphError.textContent = ''
     paragraphSuccess.innerHTML = 'Loading...'
 
-    fetch(weatherApiUrl).then((response) => {
+    fetch(weatherApiUrl).then((response) => {/*  */
 
         response.json().then((data) => {
             if (data.error) {

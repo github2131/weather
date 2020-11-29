@@ -85,13 +85,14 @@ app.get('/weather', (req, res) => {
             })
         }
         // se invece recupero le coordinate..
-        forecast(latitude, longitude, (forecastError, { location: forecastLocation, temperature, precipPrevision } = {}) => { // DESTRUCTURED FUNCTION ARGUMENT OBJECT (forecastData)
+        forecast(latitude, longitude, (forecastError, { location: forecastLocation, temperature, precipPrevision, icon } = {}) => { // DESTRUCTURED FUNCTION ARGUMENT OBJECT (forecastData)
             if (forecastError) {
                 return res.send({
                     error: forecastError //error: error
                 })
             }
             res.send({
+                icon : ( (icon) ? `<img src=" ${icon}" alt= "weather Icon">` : '' ),
                 forecast: `${forecastLocation} temperature is currently ${temperature.toFixed(1)} degrees out, ${precipPrevision}`,
                 location: forecastLocation, // geocodeData.location destrured = property name location
                 address: req.query.address,

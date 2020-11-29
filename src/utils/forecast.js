@@ -22,9 +22,10 @@ const forecast = (latitude, longitude, callback) => {
             let data = {}
 
             if (bodyResponse.current) {//weatherstackURL
-
+                
                 const { name: locationName, localtime } = bodyResponse.location // DESTRUCTURED body.location
-                const { temperature, humidity, precip, wind_speed: windSpeed } = bodyResponse.current // DESTRUCTURED body.current
+                const { temperature, humidity, precip, wind_speed: windSpeed, weather_icons } = bodyResponse.current // DESTRUCTURED body.current
+                
 
                 data = {
                     location: locationName,
@@ -32,6 +33,7 @@ const forecast = (latitude, longitude, callback) => {
                     temperature, // DESTRUCTURED shorthand
                     humidity, // DESTRUCTURED shorthand
                     windSpeed, // DESTRUCTURED shorthand
+                    icon : (weather_icons) ? weather_icons[0] : '',
                     precipPrevision : `probability of precip : ${precip}%`
                     //full_data : response.body
                 }
@@ -45,6 +47,7 @@ const forecast = (latitude, longitude, callback) => {
                     temperature,//DESTRUCTURED shorthand
                     humidity,//DESTRUCTURED shorthand
                     windSpeed,
+                    icon : '',
                     precipPrevision :  `probability of precip : "data not provided" `
                     //full_data : response.body
                 }

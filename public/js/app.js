@@ -16,6 +16,7 @@ weatherForm.addEventListener('submit', (e) => {
 
     paragraphError.textContent = ''
     paragraphSuccess.innerHTML = 'Loading...'
+    
 
     fetch(weatherApiUrl).then((response) => {/*  */
 
@@ -23,8 +24,8 @@ weatherForm.addEventListener('submit', (e) => {
             if (data.error) {
                 return paragraphError.textContent = data.error
             }
-
-            paragraphSuccess.innerHTML = data.address.toUpperCase() + ':<br>' + data.forecast
+            
+            paragraphSuccess.innerHTML = data.icon + ' <h4>' + data.address.toUpperCase() + '</h4> <br>' + data.forecast
         })
     })
     //const data = getWeather(location);
